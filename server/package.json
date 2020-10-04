@@ -1,0 +1,31 @@
+{
+  "name": "books-store",
+  "version": "1.0.0",
+  "description": "books-store",
+  "author": "Sarel Varoner",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run serve",
+    "devStart": "nodemon src/server.ts",
+    "serve": "node src/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^4.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.4.11",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "validator": "^13.1.1"
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.1",
+    "jest": "^24.8.0",
+    "mongodb-memory-server": "^3.1.1",
+    "nodemon": "^2.0.2"
+  }
+}
