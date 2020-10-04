@@ -64,7 +64,7 @@ export async function editBook(token, id, name, price, author, publisher) {
 
         if (!response.ok) {
             if ([401, 403].indexOf(response.status) !== -1) {
-                return { book: null, massage: 'cannot save changes plead try later' }
+                return { book: null, massage: 'cannot save changes please try later' }
             }
             const error = (data && data.message) || response.statusText;
             return new Error(error)
@@ -90,7 +90,7 @@ export async function createBook(token, name, price, author, publisher) {
 
         if (!response.ok) {
             if ([401, 403].indexOf(response.status) !== -1) {
-                return { book: null, massage: 'cannot save plead try later' }
+                return { book: null, massage: 'cannot save please try later' }
             }
             const error = (data && data.message) || response.statusText;
             return new Error(error)
@@ -114,7 +114,7 @@ export async function deleteBook(token, id) {
 
         if (!response.ok) {
             if ([401, 403].indexOf(response.status) !== -1) {
-                return { book: null, massage: 'cannot save plead try later' }
+                return { book: null, massage: 'cannot save please try later' }
             }
             const error = (data && data.message) || response.statusText;
             return new Error(error)
@@ -138,7 +138,7 @@ export async function buyBook(token, id) {
         const data = await response.json()
         if (!response.ok) {
             if ([401, 403].indexOf(response.status) !== -1) {
-                return { book: null, massage: 'cannot save plead try later' }
+                return { book: null, massage: 'cannot save please try later' }
             }
             const error = (data && data.message) || response.statusText;
             return new Error(error)
