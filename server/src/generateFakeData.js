@@ -6,15 +6,33 @@ const Book = require('./models/book')
 const { ROLE } = require('./const')
 
 
-
-
-
-
-
 const generaetUsers = async (numberOfUsers, books) => {
 
+    if (await User.countDocuments({ firstName: 'admin' }) === 0) {
+        const admin = new User({
+            firstName: "admin",
+            lastName: "admin",
+            email: "admin@admin.com",
+            password: "adminadmin",
+            tokens: [],
+            role: ROLE.admin
+        })
+        await admin.save()
+        await admin.generateAuthToken()
+    }
 
-
+    if (await User.countDocuments({ firstName: 'user' }) === 0) {
+        const user = new User({
+            firstName: "user",
+            lastName: "user",
+            email: "user@user.com",
+            password: "useruser",
+            tokens: [],
+            role: ROLE.user
+        })
+        await user.save()
+        await user.generateAuthToken()
+    }
 
     // if (await User.countDocuments({}) > 60) return
     // const users = Array(numberOfUsers).fill(null).map((user, userIndex) => {
